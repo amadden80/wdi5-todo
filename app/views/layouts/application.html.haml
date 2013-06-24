@@ -15,4 +15,6 @@
     = csrf_meta_tags
   %body
     = render :partial => 'layouts/nav'
+    .row
+      = yield
     = render :partial => 'layouts/footer'

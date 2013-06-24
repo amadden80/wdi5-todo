@@ -11,37 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305152222) do
-
-  create_table "priorities", :force => true do |t|
-    t.string   "name"
-    t.string   "color",      :default => "#ffffff"
-    t.integer  "user_id"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.integer  "value",      :default => 1
-  end
+ActiveRecord::Schema.define(:version => 20130228151730) do
 
   create_table "tasks", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.date     "duedate"
-    t.boolean  "is_complete", :default => false
-    t.integer  "user_id"
-    t.integer  "priority_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.text     "address"
-    t.float    "latitude",    :default => 0.0
-    t.float    "longitude",   :default => 0.0
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.text     "desc"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

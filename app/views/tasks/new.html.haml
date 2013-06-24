@@ -1,0 +1,17 @@
+= form_for @task do |f|
+  = f.text_field :desc
+  = f.submit id: 'submit'
+
+%ol#list
+
+:javascript
+  $(function(){
+    $('#submit').on('click', function(e){
+      e.preventDefault();
+      $.post('/tasks', {desc: $('#task_desc').val()}, function(data) {
+        $('#list').append('<li>').text(data);
+        $('#task_desc').val('')
+      });
+    });
+  });
+
